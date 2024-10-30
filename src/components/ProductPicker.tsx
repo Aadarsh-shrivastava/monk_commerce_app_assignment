@@ -43,7 +43,7 @@ function ProductPicker({
       method: "GET",
       headers: {
         accept: "application/json",
-        "x-api-key": import.meta.env.VITE_API_KEY ?? "",
+        "x-api-key": process.env.VITE_API_KEY ?? "",
       },
     };
     const res = await fetch(

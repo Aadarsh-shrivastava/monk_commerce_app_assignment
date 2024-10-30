@@ -30,10 +30,10 @@ function ListItem({ index, item }: ListItemProps) {
           updateIndex={index - 1}
         />
       )}
-      <div className="flex flex-row gap-2 items-center p-4">
+      <div className="flex flex-row gap-2 items-center p-4 w-full flex-wrap">
         <Draggable />
         <span>{index}</span>
-        <div className="flex flex-row justify-between w-96  rounded-sm shadow shadow-gray-300 items-center px-2 py-1">
+        <div className="flex flex-row justify-between  flex-grow  rounded-sm shadow shadow-gray-300 items-center px-2 py-1">
           <span>{item.title}</span>
           <div onClick={() => setSHowEditor(true)}>
             <Edit />
@@ -69,7 +69,7 @@ function ListItem({ index, item }: ListItemProps) {
         {showVariants ? "Hide Variants" : "Show Variants"}
       </button>
       {showVariants && (
-        <div className="flex flex-col ">
+        <div className="flex flex-col w-full pl-10">
           {item && (
             <Reorder.Group
               axis="y"
@@ -105,13 +105,13 @@ const VariantItem = ({
 }) => {
   const { removeVariant, setVariantDiscount } = useProductList();
   return (
-    <div className="flex flex-row justify-between gap-4 w-full items-center p-2 self-end">
+    <div className="flex flex-row justify-between gap-4 w-full flex-wrap items-center p-2 self-end">
       <div className="flex-shrink-0">
         <Draggable />
       </div>
 
-      <div className="flex-grow rounded-2xl w-72 shadow shadow-gray-300 px-4 py-2 bg-white">
-        <span className="text-base font-medium">{variant.title}</span>
+      <div className="flex-grow rounded-2xl shadow shadow-gray-300 px-4 py-2 bg-white">
+        <span className="text-base ">{variant.title}</span>
       </div>
 
       {variant.discount && (

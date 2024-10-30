@@ -27,12 +27,21 @@ function ProductPickerItem({
   useEffect(() => {
     onVariantChange(item.id, checkedVariants);
   }, [checkedVariants]);
-  const handleVariantCheck = (variant: Variant) => {
-    setCheckedVariants((prev) => [...prev, variant]);
-    setIsParentChecked(true);
 
-    if (checkedVariants.length > 1) {
-      setCheckedVariants((prev) => prev.filter((v) => v.id !== variant.id));
+  const handleVariantCheck = (variant: Variant) => {
+    const isVariantChecked = checkedVariants.some((v) => v.id === variant.id);
+
+    if (isVariantChecked) {
+      if (checkedVariants.length > 1) {
+        setCheckedVariants((prev) => prev.filter((v) => v.id !== variant.id));
+      }
+    } else {
+      setCheckedVariants((prev) => [...prev, variant]);
+      setIsParentChecked(true);
+
+      if (!isParentChecked) {
+        addToCurrentList(item, [...checkedVariants, variant]);
+      }
     }
   };
 

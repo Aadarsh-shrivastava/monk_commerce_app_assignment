@@ -130,7 +130,6 @@ function ProductPicker({
     >
       <div className="relative p-4 w-full max-w-2xl  ">
         <div className="relative bg-white rounded-lg shadow dark:bg-gray-100 ">
-          {/* Modal Header */}
           <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
             <h3 className="text-xl font-semibold text-gray-900">
               Select Products
@@ -181,7 +180,6 @@ function ProductPicker({
             </div>
           </div>
 
-          {/* Modal Footer */}
           <div className="flex items-center justify-between p-4 md:p-5 border-t border-gray-200 rounded-b">
             <div>
               <span>

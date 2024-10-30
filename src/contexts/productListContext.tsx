@@ -61,7 +61,7 @@ export const ProductListProvider: React.FC<{ children: ReactNode }> = ({
   const removeVariant = (productId: number, variantId: number) => {
     setProductList((prevList) =>
       prevList.map((product) =>
-        product.id === productId
+        product.id === productId && product.variants.length > 1
           ? {
               ...product,
               variants: product.variants.filter(

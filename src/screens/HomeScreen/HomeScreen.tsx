@@ -12,8 +12,8 @@ function HomeScreen() {
       {showProductPicker && (
         <ProductPicker onClose={() => setShowProductPicker(false)} />
       )}
-      <div className="flex justify-center items-center">
-        <div>
+      <div className="flex justify-center items-center p-5">
+        <div className="w-full">
           <h5 className="font-bold">Add Products</h5>
           {productList && (
             <Reorder.Group
@@ -22,7 +22,7 @@ function HomeScreen() {
               onReorder={setProductList}
             >
               {productList.map((item, index) => (
-                <Reorder.Item key={item.id} value={item}>
+                <Reorder.Item key={item.id} value={item} className="w-full">
                   <ListItem index={index + 1} key={item.id} item={item} />
                 </Reorder.Item>
               ))}

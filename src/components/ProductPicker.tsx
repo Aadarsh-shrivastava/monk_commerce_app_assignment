@@ -48,7 +48,9 @@ function ProductPicker({
       },
     };
     const res = await fetch(
-      `${import.meta.env.VITE_API_URL ?? ""}/task/products/search?${
+      `${
+        import.meta.env.VITE_API_URL ?? "https://stageapi.monkcommerce.app"
+      }/task/products/search?${
         query ? `search=${query}&` : ""
       }page=${page}&limit=${limit}`,
       options

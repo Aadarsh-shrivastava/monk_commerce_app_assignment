@@ -183,7 +183,8 @@ function ProductPicker({
           <div className="flex items-center justify-between p-4 md:p-5 border-t border-gray-200 rounded-b">
             <div>
               <span>
-                {currentList.length} Product{currentList.length > 1 ? "s" : ""}
+                {currentList.length} Product
+                {currentList.length > 1 ? "s " : " "}
                 selected
               </span>
             </div>

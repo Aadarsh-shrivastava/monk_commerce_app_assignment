@@ -39,7 +39,6 @@ function ProductPicker({
     );
   const fetchProducts = async () => {
     setIsLoading(true);
-    console.log(import.meta.env.VITE_API_KEY ?? "");
     const options = {
       method: "GET",
       headers: {

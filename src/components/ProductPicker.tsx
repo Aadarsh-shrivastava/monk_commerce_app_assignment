@@ -39,16 +39,16 @@ function ProductPicker({
     );
   const fetchProducts = async () => {
     setIsLoading(true);
-    console.log(process.env.VITE_API_KEY ?? "");
+    console.log(import.meta.env.VITE_API_KEY ?? "");
     const options = {
       method: "GET",
       headers: {
         accept: "application/json",
-        "x-api-key": process.env.VITE_API_KEY ?? "",
+        "x-api-key": import.meta.env.VITE_API_KEY ?? "",
       },
     };
     const res = await fetch(
-      `https://stageapi.monkcommerce.app/task/products/search?${
+      `${import.meta.env.VITE_API_URL ?? ""}/task/products/search?${
         query ? `search=${query}&` : ""
       }page=${page}&limit=${limit}`,
       options

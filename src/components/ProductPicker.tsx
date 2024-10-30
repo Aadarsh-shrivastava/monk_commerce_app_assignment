@@ -47,7 +47,7 @@ function ProductPicker({
       },
     };
     const res = await fetch(
-      `http://stageapi.monkcommerce.app/task/products/search?${
+      `https://stageapi.monkcommerce.app/task/products/search?${
         query ? `search=${query}&` : ""
       }page=${page}&limit=${limit}`,
       options

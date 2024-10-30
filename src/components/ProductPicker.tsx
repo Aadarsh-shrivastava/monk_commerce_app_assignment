@@ -47,7 +47,7 @@ function ProductPicker({
       },
     };
     const res = await fetch(
-      `/api/task/products/search?${
+      `/task/products/search?${
         query ? `search=${query}&` : ""
       }page=${page}&limit=${limit}`,
       options
